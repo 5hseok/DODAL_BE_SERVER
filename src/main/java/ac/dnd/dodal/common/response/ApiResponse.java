@@ -64,4 +64,20 @@ public record ApiResponse<T>(
             null
         );
     }
+
+    public static <T> ApiResponse<T> success(ResultCode resultCode) {
+        return new ApiResponse<>(
+            resultCode.getCode(),
+            resultCode.getMessage(),
+            null
+        );
+    }
+
+    public static <T> ApiResponse<T> success(ResultCode resultCode, String message) {
+        return new ApiResponse<>(
+            resultCode.getCode(),
+            message,
+            null
+        );
+    }
 }
