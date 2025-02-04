@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class AbstractAuthenticationFailureHandler {
 
-    private final ObjectMapper objectMapper = new ObjectMapper();
+    protected final ObjectMapper objectMapper = new ObjectMapper();
 
     protected void setErrorResponse(
             HttpServletResponse response,
@@ -24,14 +24,6 @@ public class AbstractAuthenticationFailureHandler {
 
         ApiResponse<?> apiResponse = ApiResponse.failure(errorCode);
 
-        response.getWriter().write(objectMapper.writeValueAsString(apiResponse));
-    }
-
-    protected void setSuccessResponse(HttpServletResponse response, ResultCode successCode) throws IOException {
-        response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
-
-        ApiResponse<?> apiResponse = ApiResponse.success(successCode);
         response.getWriter().write(objectMapper.writeValueAsString(apiResponse));
     }
 }
