@@ -1,5 +1,6 @@
 package ac.dnd.dodal.domain.user.model;
 
+import ac.dnd.dodal.common.model.BaseEntity;
 import ac.dnd.dodal.domain.user.enums.E_user_role;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -7,13 +8,16 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.cglib.core.Local;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @DynamicUpdate
 @Table(name = "users")
-public class Users {
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
+public class Users extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,17 +36,15 @@ public class Users {
     @Column(name="email", nullable = false, unique = true)
     private String email;
 
-//    @Column(name="password", nullable = false)     // 이메일 회원 로직을 사용할 경우에 사용
-//    private final String password;
-
     @Column(name="role", nullable = false)
-    private E_user_role role;  // enum으로 변경 예정
+    private E_user_role role;
 
     @Column(name="refresh_token")
     private String refreshToken;
 
     @Builder
     public Users(String nickname, String deviceToken, String email, E_user_role role) {
+        super(LocalDateTime.now(), LocalDateTime.now(), null);
         this.nickname = nickname;
         this.profileImageUrl = null;
         this.deviceToken = deviceToken;

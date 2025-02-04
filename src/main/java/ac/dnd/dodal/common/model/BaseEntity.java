@@ -5,10 +5,7 @@ import java.time.LocalDateTime;
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
 
-import lombok.Getter;
-import lombok.ToString;
-import lombok.EqualsAndHashCode;
-import lombok.AllArgsConstructor;
+import lombok.*;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -18,6 +15,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 @ToString
 @EqualsAndHashCode
 @AllArgsConstructor
+@NoArgsConstructor
 public class BaseEntity {
 
     @Column(updatable = false)
