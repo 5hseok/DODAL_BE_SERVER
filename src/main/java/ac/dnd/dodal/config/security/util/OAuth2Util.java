@@ -38,7 +38,7 @@ public class OAuth2Util {
                 "&response_type=code";
     }
 
-    public String getKakaoAccessToken(String authorizationCode) {
+    public String getAppleAccessToken(String authorizationCode) {
         Map<String, Object> response;
 
         try {
@@ -57,7 +57,7 @@ public class OAuth2Util {
         return response.get("access_token").toString();
     }
 
-    public Map<String, String> getKakaoUserInformation(String accessToken) {
+    public Map<String, String> getAppleUserInformation(String accessToken) {
         Map<String, Object> response;
 
         try {
