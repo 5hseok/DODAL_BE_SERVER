@@ -9,9 +9,13 @@ import org.springframework.http.HttpStatus;
 @RequiredArgsConstructor
 public enum E_user_code implements ResultCode {
 
+    //failure
     NO_SUCH_ROLE("USER001", "No such user role"),
     NOT_FOUND_USER("USER002", "User not found"),
-    ACCESS_DENIED("USER003", "User access denied"),;
+    ACCESS_DENIED("USER003", "User access denied"),
+
+    //success
+    SUCCESS_LOGOUT("USER101", "User logout success"),;
 
     private final String code;
     private final String message;

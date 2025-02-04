@@ -33,7 +33,8 @@ public enum CommonResultCode implements ResultCode {
     TOKEN_UNSUPPORTED_ERROR("SEC004", "Token Unsupported Error"),
     TOKEN_UNKNOWN_ERROR("SEC005", "Token Unknown Error"),
     INVALID_HEADER_ERROR("SEC006", "Invalid Header Error"),
-    NOT_FOUND_END_POINT("SEC007", "Not Found End Point");
+    NOT_FOUND_END_POINT("SEC007", "Not Found End Point"),
+    EXTERNAL_SERVER_ERROR("SEC008", "External Server Error"),;
 
     private final String code;
     private final String message;
