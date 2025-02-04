@@ -25,7 +25,15 @@ public enum CommonResultCode implements ResultCode {
     PLAN_EXCEPTION("PLN000", "Plan Exception"),
     INDICATOR_EXCEPTION("IND000", "Indicator Exception"),
     NOTIFICATION_EXCEPTION("NOT000", "Notification Exception"),
-    ;
+
+    // security
+    TOKEN_MALFORMED_ERROR("SEC001", "Token Malformed Error"),
+    TOKEN_TYPE_ERROR("SEC002", "Token Type Error"),
+    EXPIRED_TOKEN_ERROR("SEC003", "Expired Token Error"),
+    TOKEN_UNSUPPORTED_ERROR("SEC004", "Token Unsupported Error"),
+    TOKEN_UNKNOWN_ERROR("SEC005", "Token Unknown Error"),
+    INVALID_HEADER_ERROR("SEC006", "Invalid Header Error"),
+    NOT_FOUND_END_POINT("SEC007", "Not Found End Point");
 
     private final String code;
     private final String message;
