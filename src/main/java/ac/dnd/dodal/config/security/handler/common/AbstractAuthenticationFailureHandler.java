@@ -26,4 +26,12 @@ public class AbstractAuthenticationFailureHandler {
 
         response.getWriter().write(objectMapper.writeValueAsString(apiResponse));
     }
+
+    protected void setSuccessResponse(HttpServletResponse response, ResultCode successCode) throws IOException {
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+
+        ApiResponse<?> apiResponse = ApiResponse.success(successCode);
+        response.getWriter().write(objectMapper.writeValueAsString(apiResponse));
+    }
 }
