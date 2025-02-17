@@ -20,7 +20,6 @@ public class HistoryStatisticsEventListenter {
             historyStatisticsService.findByIdOrThrow(event.getHistoryId());
 
         historyStatistics.incrementCount(event.getStatus());
-        historyStatistics.setRecentCompletedPlanTitle(event.getTitle());
         historyStatisticsService.save(historyStatistics);
     }
 }

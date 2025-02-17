@@ -19,7 +19,6 @@ public class PlanCompletedEvent {
     private String question;
     private String indicator;
     private String guide;
-    private String title;
 
     public static PlanCompletedEvent of(Plan plan, PlanFeedback feedback) {
         return new PlanCompletedEvent(
@@ -30,8 +29,7 @@ public class PlanCompletedEvent {
             plan.getStatus(),
             feedback.getQuestion(),
             feedback.getIndicator(),
-            plan.getGuide(),
-            plan.getTitle()
+            plan.getGuide()
         );
     }
 
@@ -47,10 +45,9 @@ public class PlanCompletedEvent {
         PlanStatus status,
         String question,
         String indicator,
-        String guide,
-        String title) {
+        String guide) {
         if (userId == null || goalId == null || historyId == null || planId == null
-                || status == null || question == null || indicator == null || guide == null || title == null) {
+                || status == null || question == null || indicator == null || guide == null) {
             throw new IllegalArgumentException("PlanCompletedEvent: Invalid arguments");
         }
         if (status != PlanStatus.SUCCESS && status != PlanStatus.FAILURE) {
@@ -64,6 +61,5 @@ public class PlanCompletedEvent {
         this.question = question;
         this.indicator = indicator;
         this.guide = guide;
-        this.title = title;
     }
 }

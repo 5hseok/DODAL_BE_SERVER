@@ -30,11 +30,10 @@ public class PlanQueryService implements
     GetWeeklyAchievementRateOfGoalUseCase {
 
     private final PlanRepository planRepository;
-    private final PlanService planService;
 
     @Override
     public Page<PlanElement> getPlansOfHistory(GetPlansOfHistoryQuery query) {
-        if (!planService.isExistByUserIdAndGoalIdAndHistoryId(query.userId(), query.goalId(),
+        if (!isExistByUserIdAndGoalIdAndHistoryId(query.userId(), query.goalId(),
                 query.historyId())) {
             throw new ForbiddenException();
         }
@@ -43,7 +42,7 @@ public class PlanQueryService implements
 
     @Override
     public List<PlanElement> getPlansOfGoalByDate(GetPlansOfGoalQuery query) {
-        if (!planService.isExistByUserIdAndGoalId(query.userId(), query.goalId())) {
+        if (!isExistByUserIdAndGoalId(query.userId(), query.goalId())) {
             throw new ForbiddenException();
         }
 
@@ -64,7 +63,7 @@ public class PlanQueryService implements
     @Override
     public List<DailyAchievementRateElement> getWeeklyAchievementRateOfGoal(
             GetWeeklyAchievementRateOfGoalQuery query) {
-        if (!planService.isExistByUserIdAndGoalId(query.userId(), query.goalId())) {
+        if (!isExistByUserIdAndGoalId(query.userId(), query.goalId())) {
             throw new ForbiddenException();
         }
 
@@ -99,5 +98,14 @@ public class PlanQueryService implements
                 plan.endDate().isAfter(startDateTime)) ||
                 (plan.startDate().isBefore(endDateTime) &&
                 plan.endDate().isEqual(startDateTime));
+    }
+
+    private boolean isExistByUserIdAndGoalIdAndHistoryId(
+        Long userId, Long goalId, Long historyId) {
+        return planRepository.isExistByUserIdAndGoalIdAndHistoryId(userId, goalId, historyId);
+    }
+
+    private boolean isExistByUserIdAndGoalId(Long userId, Long goalId) {
+        return planRepository.isExistByUserIdAndGoalId(userId, goalId);
     }
 }

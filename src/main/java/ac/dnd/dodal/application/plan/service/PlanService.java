@@ -47,13 +47,4 @@ public class PlanService {
         return planRepository.findLatestPlanByHistoryId(historyId)
                 .orElseThrow(() -> new NotFoundException(PlanExceptionCode.PLAN_NOT_FOUND));
     }
-
-    public boolean isExistByUserIdAndGoalIdAndHistoryId(
-        Long userId, Long goalId, Long historyId) {
-        return planRepository.isExistByUserIdAndGoalIdAndHistoryId(userId, goalId, historyId);
-    }
-
-    public boolean isExistByUserIdAndGoalId(Long userId, Long goalId) {
-        return planRepository.isExistByUserIdAndGoalId(userId, goalId);
-    }
 }
