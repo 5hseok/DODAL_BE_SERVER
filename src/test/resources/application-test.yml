@@ -23,3 +23,15 @@ jwt:
   secret: testsecretcodeisrandomvalueokaksdfopqjksdnklfjpqjklsdjojpoaklqnknn123nlknlkn1lnodnjkv
   access-token-validity-in-milli-seconds: 3600000
   refresh-token-validity-in-milli-seconds: 604800000
+
+  security:
+    oauth2:
+      apple:
+        grant_type: testGrantType
+        redirect-uri: testRedirectUri
+        key-id: testKeyId
+        public-key-uri: https://appleid.apple.com/auth/oauth2/v2/keys
+        client:
+          client-id: testClientId
+          team-id: testTeamId
+          client-secret: testClientSecret
