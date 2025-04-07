@@ -18,3 +18,8 @@ logging:
 
 server:
   port: 9999
+
+jwt:
+  secret: testsecretcode
+  access-token-validity-in-milli-seconds: 3600000
+  refresh-token-validity-in-milli-seconds: 604800000
