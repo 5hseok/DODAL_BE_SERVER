@@ -21,4 +21,4 @@ server:
 
 jasypt:
   encryptor:
-    enabled: false
+    password: ${DODAL_JASYPT_KEY}
