@@ -20,6 +20,6 @@ server:
   port: 9999
 
 jwt:
-  secret: testsecretcode
+  secret: testsecretcodeisrandomvalueokaksdfopqjksdnklfjpqjklsdjojpoaklqnknn123nlknlkn1lnodnjkv
   access-token-validity-in-milli-seconds: 3600000
   refresh-token-validity-in-milli-seconds: 604800000
