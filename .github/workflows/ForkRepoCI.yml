@@ -48,7 +48,7 @@ jobs:
       - name: Run tests and generate coverage report
         run: |
           chmod +x gradlew
-          ./gradlew clean test jacocoTestReport
+          ./gradlew clean test jacocoTestReport --info
 
       - name: Add coverage to PR
         id: jacoco
