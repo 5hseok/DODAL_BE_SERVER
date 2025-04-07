@@ -21,4 +21,4 @@ server:
 
 jasypt:
   encryptor:
-    password: ${DODAL_JASYPT_KEY}
+    password: dnd-12th-2-dodal
