@@ -19,3 +19,6 @@ logging:
 server:
   port: 9999
 
+jasypt:
+  encryptor:
+    enabled: false
