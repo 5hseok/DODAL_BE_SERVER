@@ -35,3 +35,6 @@ jwt:
   secret: testsecretcodeisrandomvalueokaksdfopqjksdnklfjpqjklsdjojpoaklqnknn123nlknlkn1lnodnjkv
   access-token-validity-in-milli-seconds: 3600000
   refresh-token-validity-in-milli-seconds: 604800000
+jasypt:
+  encryptor:
+    password: testpassword
