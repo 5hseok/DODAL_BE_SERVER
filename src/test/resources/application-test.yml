@@ -18,7 +18,3 @@ logging:
 
 server:
   port: 9999
-
-jasypt:
-  encryptor:
-    password: dnd-12th-2-dodal
