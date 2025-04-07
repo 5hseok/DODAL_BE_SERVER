@@ -14,7 +14,7 @@ permissions:
   pull-requests: write
 
 env:
-  SPRING_CONFIG_LOCATION: classpath:test/resources/application-test.yml
+  SPRING_CONFIG_LOCATION: classpath:application-test.yml
   DODAL_JASYPT_KEY: ${{ secrets.DODAL_JASYPT_KEY }}
 
 jobs:
