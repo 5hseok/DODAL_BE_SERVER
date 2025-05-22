@@ -1,5 +1,6 @@
 # DND 12기 2조 백엔드
 ## Find Yourself and Make Goal!
+[Project Overview for DeepWiki!](https://deepwiki.com/5hseok/DODAL_BE_SERVER/1-overview)
 
 ![image](https://github.com/user-attachments/assets/d71f439a-089d-4839-a543-ce73f91549d0)
 
